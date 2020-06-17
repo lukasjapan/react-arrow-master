@@ -10,7 +10,8 @@
   "outDir": "dist",
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/lukasjapan/react-arrow-master",
   "devDependencies": {
     "@types/react": "^16.9.35",
     "@types/react-color": "^3.0.2",
