@@ -1,0 +1,31 @@
+{
+  "name": "react-arrow-master",
+  "version": "0.1.0",
+  "description": "Draw SVG arrows in your React Application!",
+  "main": "index.tsx",
+  "scripts": {
+    "build": "tsc",
+    "start": "webpack-dev-server --color"
+  },
+  "outDir": "dist",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-color": "^3.0.2",
+    "@types/react-dom": "^16.9.8",
+    "html-webpack-plugin": "^4.3.0",
+    "react": "^16.13.1",
+    "react-color": "^2.18.1",
+    "react-dom": "^16.13.1",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "peerDependencies": {
+    "react": "^16"
+  }
+}
