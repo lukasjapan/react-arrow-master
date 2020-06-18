@@ -270,7 +270,7 @@ const App = () => {
           react-arrow-master - Sandbox
         </h1>
         <p>
-          This is the official Sandbox of{" "}
+          This is the official sandbox of{" "}
           <a
             href="https://github.com/lukasjapan/react-arrow-master"
             target="_blank"
@@ -278,7 +278,7 @@ const App = () => {
             react-arrow-master
           </a>
           . You can edit each arrow individually below. Click on the boxes to
-          edit their style.
+          change their style.
         </p>
         <hr />
         <div
