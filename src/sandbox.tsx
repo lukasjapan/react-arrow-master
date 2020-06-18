@@ -264,7 +264,7 @@ const App = () => {
         <h1
           onClick={() => {
             setArrows(ramArrows);
-            setBoxes(clearBoxes);
+            setBoxes([...clearBoxes]);
           }}
         >
           react-arrow-master - Sandbox
@@ -377,13 +377,12 @@ const App = () => {
           <li className="nav-item">&nbsp;&nbsp;&nbsp;</li>
           {arrows.map((_, i) => (
             <li className="nav-item" key={i}>
-              <a
-                href="#"
-                className={`nav-link ${arrowIndex == i && "active"}`}
+              <button
+                className={`btn nav-link ${arrowIndex == i && "active"}`}
                 onClick={() => setArrowIndex(i)}
               >
                 Arrow {i + 1}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
