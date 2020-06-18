@@ -41,7 +41,7 @@ const MyComponent = () => (
 
 ### Simple Arrows - Starting and Ending from the Side of an Element
 
-To start from the side of an element, also define the `posX` and `posX` property.
+To start from the side of an element, pass the `id` along with the `posX` and `posY` property as an object.
 
 ```tsx
 import { ArrowArea } from "react-arrow-master";
@@ -105,12 +105,12 @@ const MyComponent = () => (
 
 ![Styled](/images/styled.png)
 
-| Property | Description                                                           | Example                                                                                                     |
-| -------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| color    | The color of the array as a string that can be understood by SVG/CSS. | `#0000ff`, `red`, ...                                                                                       |
-| width    | The width of the arrow. Floating point numbers can be used            | `1`,`1.5`,..                                                                                                |
-| head     | The type of the arrow head.                                           | See [here](https://github.com/lukasjapan/react-arrow-master/blob/master/index.d.ts#L36) for possible values |
-| arrow    | The type of the arrow line.                                           | See [here](https://github.com/lukasjapan/react-arrow-master/blob/master/index.d.ts#L35) for possible values |
+| Property | Description                                                       | Example                                                                                                     |
+| -------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| color    | The color of the arrow as a string that can be understood by SVG. | `#0000ff`, `red`, ...                                                                                       |
+| width    | The width of the arrow. Floating point numbers can be used.       | `1`,`1.5`,..                                                                                                |
+| head     | The type of the arrow head.                                       | See [here](https://github.com/lukasjapan/react-arrow-master/blob/master/index.d.ts#L36) for possible values |
+| arrow    | The type of the arrow line.                                       | See [here](https://github.com/lukasjapan/react-arrow-master/blob/master/index.d.ts#L35) for possible values |
 
 ### Default Style
 
