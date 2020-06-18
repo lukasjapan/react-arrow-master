@@ -106,11 +106,14 @@ const requireLocation = (
         posY: input.posY || "middle",
       };
 
-const getPoint = (location: string | ArrowLocation): DirectedPoint | null => {
+const getPoint = (
+  holder: Element,
+  location: string | ArrowLocation
+): DirectedPoint | null => {
   const loc = requireLocation(location);
-  const el = document.getElementById(loc.id);
+  const el = holder.querySelector("#" + loc.id);
 
-  if (!el) {
+  if (!(el instanceof HTMLElement)) {
     return null;
   }
 
@@ -157,11 +160,12 @@ const diff = (a: Point, b: Point): Point => [b[0] - a[0], b[1] - a[1]];
 const len = (a: Point): number => Math.sqrt(a[0] * a[0] + a[1] * a[1]);
 
 const buildPath = (
+  holder: HTMLElement,
   arrow: Arrow,
   defaultArrowSpec: ArrowSpec
 ): PathSpec | null => {
-  const from = getPoint(arrow.from);
-  const to = getPoint(arrow.to);
+  const from = getPoint(holder, arrow.from);
+  const to = getPoint(holder, arrow.to);
 
   if (!from || !to) {
     return null;
@@ -247,11 +251,13 @@ function notNull<T>(value: T | null): value is T {
 
 const update = (el: HTMLDivElement) => {
   const arrows: Arrows = JSON.parse(el.dataset.arrows!);
-  const holder = el.closest(`.${ARROWMASTER_CLASS}`);
+  const holder = el.closest(`.${ARROWMASTER_CLASS}`) as HTMLElement;
 
   const paths = arrows.arrows
-    .map((a) => buildPath(a, arrows.defaultArrowSpec))
+    .map((a) => buildPath(holder, a, arrows.defaultArrowSpec))
     .filter(notNull);
+
+  const prefix = `p${Math.random().toString(16).substr(2, 8)}`;
 
   const pathElements = paths.map((path, i) => {
     let d;
@@ -269,14 +275,15 @@ const update = (el: HTMLDivElement) => {
       const e = path.points.map((p) => p.join(" ")).join(" L ");
       d = `M ${s} L ${e}`;
     }
+
     return (
       <path
-        key={`path-${i}`}
+        key={`path-${prefix}-${i}`}
         d={d}
         stroke={path.color}
         strokeWidth={path.width}
         fill="none"
-        markerEnd={path.headPoints ? `url(#marker-${i})` : undefined}
+        markerEnd={path.headPoints ? `url(#${prefix}-${i})` : undefined}
       />
     );
   });
@@ -285,8 +292,8 @@ const update = (el: HTMLDivElement) => {
     (path, i) =>
       path.headPoints && (
         <marker
-          key={`marker-${i}`}
-          id={`marker-${i}`}
+          key={`marker-${prefix}-${i}`}
+          id={`${prefix}-${i}`}
           markerWidth={path.headPoints.size}
           markerHeight={path.headPoints.size}
           refX={path.headPoints.size - path.headPoints.adjust}
