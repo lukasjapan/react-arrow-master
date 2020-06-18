@@ -8,7 +8,11 @@
     "start": "webpack-dev-server --color"
   },
   "outDir": "dist",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "arrows",
+    "svg"
+  ],
   "author": "",
   "license": "MIT",
   "homepage": "https://github.com/lukasjapan/react-arrow-master",
