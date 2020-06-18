@@ -37,8 +37,6 @@ const MyComponent = () => (
 );
 ```
 
-→
-
 ![Simple](/images/simple.png)
 
 ### Simple Arrows - Starting and Ending from the Side of an Element
@@ -64,8 +62,6 @@ const MyComponent = () => (
   </ArrowArea>
 );
 ```
-
-→
 
 ![Sides](/images/sides.png)
 
@@ -107,8 +103,6 @@ const MyComponent = () => (
 );
 ```
 
-→
-
 ![Styled](/images/styled.png)
 
 | Property | Description                                                           | Example                                                                                                     |
@@ -146,8 +140,6 @@ const MyComponent = () => (
   </ArrowArea>
 );
 ```
-
-→
 
 ![Default Style](/images/default_style.png)
 
