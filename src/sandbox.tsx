@@ -119,9 +119,9 @@ const ArrowSettings = (props: {
       <label className="col-sm-3">Color</label>
       <div className="col-sm-9">
         <CompactPicker
-          color={props.arrow.spec!.color}
+          color={props.arrow.style!.color}
           onChange={(color) => {
-            props.arrow.spec!.color = color.hex;
+            props.arrow.style!.color = color.hex;
             props.setArrow(props.arrow);
           }}
         />
@@ -134,9 +134,9 @@ const ArrowSettings = (props: {
           type="number"
           className="form-control"
           min="0"
-          value={props.arrow.spec!.width}
+          value={props.arrow.style!.width}
           onChange={(e) => {
-            props.arrow.spec!.width = Number.parseFloat(e.target.value);
+            props.arrow.style!.width = Number.parseFloat(e.target.value);
             props.setArrow(props.arrow);
           }}
         />
@@ -146,7 +146,7 @@ const ArrowSettings = (props: {
       <label className="col-sm-3">Arrow Style</label>
       <div className="col-sm-9">
         <Select
-          value={props.arrow.spec!.arrowStyle}
+          value={props.arrow.style!.arrow}
           values={[
             ["none", "Direct"],
             ["corners", "Corners"],
@@ -156,8 +156,8 @@ const ArrowSettings = (props: {
             ["arcClockwise", "Arc - Clockwise"],
             ["arcCounterclockwise", "Arc - Counter-Clockwise"],
           ]}
-          setValue={(arrowStyle) => {
-            props.arrow.spec!.arrowStyle = arrowStyle;
+          setValue={(arrow) => {
+            props.arrow.style!.arrow = arrow;
             props.setArrow(props.arrow);
           }}
         />
@@ -167,7 +167,7 @@ const ArrowSettings = (props: {
       <label className="col-sm-3">Head Style</label>
       <div className="col-sm-9">
         <Select
-          value={props.arrow.spec!.headStyle}
+          value={props.arrow.style!.head}
           values={[
             ["default", "Default"],
             ["hollow", "Hollow"],
@@ -177,8 +177,8 @@ const ArrowSettings = (props: {
             ["circle", "Circle"],
             ["none", "None"],
           ]}
-          setValue={(headStyle) => {
-            props.arrow.spec!.headStyle = headStyle;
+          setValue={(head) => {
+            props.arrow.style!.head = head;
             props.setArrow(props.arrow);
           }}
         />
@@ -232,7 +232,7 @@ const randomArrow = () => ({
     posX: randFrom(posX),
     posY: randFrom(posY),
   },
-  spec: {
+  style: {
     width: Math.random() * 2 + 1,
     color: randFrom(colors),
     headStyle: randFrom(headStyle),

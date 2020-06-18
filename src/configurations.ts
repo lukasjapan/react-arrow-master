@@ -4,11 +4,11 @@ export const initialArrows: Arrow[] = [
   {
     from: { id: "boxA", posX: "middle", posY: "bottom" },
     to: { id: "boxN", posX: "middle", posY: "top" },
-    spec: {
+    style: {
       width: 2,
       color: "#000000",
-      arrowStyle: "smooth",
-      headStyle: "default",
+      arrow: "smooth",
+      head: "default",
     },
   },
   {
@@ -22,31 +22,31 @@ export const initialArrows: Arrow[] = [
       posX: "middle",
       posY: "bottom",
     },
-    spec: {
+    style: {
       width: 2,
       color: "#000000",
-      headStyle: "disk",
-      arrowStyle: "clipCounterclockwise",
+      head: "disk",
+      arrow: "clipCounterclockwise",
     },
   },
   {
     from: { id: "boxE", posX: "middle", posY: "bottom" },
     to: { id: "boxO", posX: "middle", posY: "top" },
-    spec: {
+    style: {
       width: 2,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "diamond",
+      arrow: "none",
+      head: "diamond",
     },
   },
   {
     from: { id: "boxA", posX: "middle", posY: "bottom" },
     to: { id: "boxR", posX: "left", posY: "middle" },
-    spec: {
+    style: {
       width: 2,
       color: "#000000",
-      arrowStyle: "corners",
-      headStyle: "hollow",
+      arrow: "corners",
+      head: "hollow",
     },
   },
 ];
@@ -55,111 +55,111 @@ export const ramArrows: Arrow[] = [
   {
     from: { id: "boxK", posX: "middle", posY: "middle" },
     to: { id: "boxA", posX: "middle", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxF", posX: "right", posY: "middle" },
     to: { id: "boxA", posX: "middle", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxK", posX: "right", posY: "middle" },
     to: { id: "boxF", posX: "middle", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxF", posX: "middle", posY: "middle" },
     to: { id: "boxF", posX: "right", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxL", posX: "middle", posY: "middle" },
     to: { id: "boxB", posX: "right", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxB", posX: "right", posY: "middle" },
     to: { id: "boxM", posX: "middle", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxG", posX: "middle", posY: "middle" },
     to: { id: "boxH", posX: "middle", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxN", posX: "left", posY: "middle" },
     to: { id: "boxD", posX: "middle", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxD", posX: "middle", posY: "middle" },
     to: { id: "boxO", posX: "left", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxN", posX: "right", posY: "middle" },
     to: { id: "boxE", posX: "middle", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
   {
     from: { id: "boxE", posX: "middle", posY: "middle" },
     to: { id: "boxO", posX: "right", posY: "middle" },
-    spec: {
+    style: {
       width: 1,
       color: "#000000",
-      arrowStyle: "none",
-      headStyle: "default",
+      arrow: "none",
+      head: "default",
     },
   },
 ];

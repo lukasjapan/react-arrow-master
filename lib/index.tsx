@@ -4,7 +4,7 @@ import { arrowStyleAliases, headStyleAliases } from "./styles";
 
 interface Props {
   arrows: Arrow[];
-  defaultArrowSpec?: Partial<ArrowSpec>;
+  defaultArrowStyle?: Partial<ArrowStyle>;
   children: React.ReactNode;
 }
 
@@ -17,7 +17,7 @@ export interface DirectedPoint {
 
 export interface Arrows {
   arrows: Arrow[];
-  defaultArrowSpec: ArrowSpec;
+  defaultArrowStyle: ArrowStyle;
 }
 
 export interface Value {
@@ -63,11 +63,11 @@ export type HeadStyleAlias =
   | "circle"
   | "none";
 
-export interface ArrowSpec {
+export interface ArrowStyle {
   width: number;
   color: string;
-  arrowStyle: ArrowStyleAlias | MidPointSpec;
-  headStyle: HeadStyleAlias;
+  arrow: ArrowStyleAlias | MidPointSpec;
+  head: HeadStyleAlias;
 }
 
 export type PosXLocation = "left" | "middle" | "right";
@@ -82,7 +82,7 @@ export interface ArrowLocation {
 export interface Arrow {
   from: string | ArrowLocation;
   to: string | ArrowLocation;
-  spec?: Partial<ArrowSpec>;
+  style?: Partial<ArrowStyle>;
 }
 
 export interface PathSpec {
@@ -162,7 +162,7 @@ const len = (a: Point): number => Math.sqrt(a[0] * a[0] + a[1] * a[1]);
 const buildPath = (
   holder: HTMLElement,
   arrow: Arrow,
-  defaultArrowSpec: ArrowSpec
+  defaultArrowStyle: ArrowStyle
 ): PathSpec | null => {
   const from = getPoint(holder, arrow.from);
   const to = getPoint(holder, arrow.to);
@@ -189,11 +189,11 @@ const buildPath = (
     to.direction[1] = to.direction[1] * Math.abs(dy);
   }
 
-  const spec = arrow.spec ?? defaultArrowSpec;
-  const width = spec.width ?? defaultArrowSpec.width;
-  const color = spec.color ?? defaultArrowSpec.color;
-  const headStyle = spec.headStyle ?? defaultArrowSpec.headStyle;
-  const midPointSpec = spec.arrowStyle ?? defaultArrowSpec.arrowStyle;
+  const style = arrow.style ?? defaultArrowStyle;
+  const width = style.width ?? defaultArrowStyle.width;
+  const color = style.color ?? defaultArrowStyle.color;
+  const headStyle = style.head ?? defaultArrowStyle.head;
+  const midPointSpec = style.arrow ?? defaultArrowStyle.arrow;
   const midPoints =
     typeof midPointSpec == "string"
       ? arrowStyleAliases[midPointSpec]
@@ -254,7 +254,7 @@ const update = (el: HTMLDivElement) => {
   const holder = el.closest(`.${ARROWMASTER_CLASS}`) as HTMLElement;
 
   const paths = arrows.arrows
-    .map((a) => buildPath(holder, a, arrows.defaultArrowSpec))
+    .map((a) => buildPath(holder, a, arrows.defaultArrowStyle))
     .filter(notNull);
 
   const prefix = `p${Math.random().toString(16).substr(2, 8)}`;
@@ -339,7 +339,7 @@ const attach = (el: HTMLDivElement | null, arrows: Arrows) => {
 export const ArrowArea = ({
   arrows,
   children,
-  defaultArrowSpec = {},
+  defaultArrowStyle = {},
 }: Props) => (
   <div className={ARROWMASTER_CLASS} style={{ position: "relative" }}>
     <svg
@@ -356,12 +356,12 @@ export const ArrowArea = ({
       ref={(el) =>
         attach(el, {
           arrows,
-          defaultArrowSpec: {
+          defaultArrowStyle: {
             color: "#000000",
             width: 1,
-            headStyle: "default",
-            arrowStyle: "none",
-            ...defaultArrowSpec,
+            head: "default",
+            arrow: "none",
+            ...defaultArrowStyle,
           },
         })
       }
