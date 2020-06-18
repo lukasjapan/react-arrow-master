@@ -54,7 +54,7 @@ const LocationSetting = (props: {
       />
     </div>
     <div className="form-group col-md-4">
-      <label>Vertical Position</label>
+      <label>Horizontal Position</label>
       <Select
         value={props.location.posX}
         values={[
@@ -260,29 +260,6 @@ const App = () => {
 
   return (
     <ArrowArea arrows={arrows}>
-      <div
-        style={{
-          fontFamily: "sansSerif",
-          textAlign: "center",
-        }}
-      >
-        <h1>Hello CodeSandbox</h1>
-        <ArrowArea
-          arrows={[
-            {
-              from: { id: "from", posY: "bottom" },
-              to: { id: "to", posY: "bottom" },
-              spec: { arrowStyle: "clipCounterclockwise" },
-            },
-          ]}
-        >
-          Start <span id="from">editing</span> to see some{" "}
-          <span id="to">magic</span> happen!
-          <br />
-          <br />
-          <br />
-        </ArrowArea>
-      </div>
       <div className="container">
         <h1
           onClick={() => {
@@ -333,6 +310,7 @@ const App = () => {
                   textAlign: "center",
                   fontSize: "2em",
                   lineHeight: "100px",
+                  userSelect: "none",
                   color:
                     type == "solid"
                       ? "#000000"
