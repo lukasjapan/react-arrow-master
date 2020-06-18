@@ -267,9 +267,19 @@ const App = () => {
             setBoxes(clearBoxes);
           }}
         >
-          React Arrow Master - Sandbox
+          react-arrow-master - Sandbox
         </h1>
-        <p></p>
+        <p>
+          This is the official Sandbox of{" "}
+          <a
+            href="https://github.com/lukasjapan/react-arrow-master"
+            target="_blank"
+          >
+            react-arrow-master
+          </a>
+          . You can edit each arrow individually below. Click on the boxes to
+          edit their style.
+        </p>
         <hr />
         <div
           style={{
