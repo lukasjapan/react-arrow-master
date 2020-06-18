@@ -1,10 +1,10 @@
 {
   "name": "react-arrow-master",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Draw SVG arrows in your React Application!",
   "main": "index.tsx",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -r ./dist/lib/* .",
     "start": "webpack-dev-server --color"
   },
   "outDir": "dist",
@@ -26,6 +26,12 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "styles.js",
+    "styles.d.ts"
+  ],
   "peerDependencies": {
     "react": "^16"
   }

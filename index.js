@@ -20,7 +20,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_dom_1 = require("react-dom");
-var aliases_1 = require("./aliases");
+var styles_1 = require("./styles");
 var ARROWMASTER_CLASS = "__react_arrowmaster";
 var requireLocation = function (input) {
     return typeof input == "string"
@@ -108,9 +108,9 @@ var buildPath = function (arrow, defaultArrowSpec) {
     var headStyle = (_d = spec.headStyle) !== null && _d !== void 0 ? _d : defaultArrowSpec.headStyle;
     var midPointSpec = (_e = spec.arrowStyle) !== null && _e !== void 0 ? _e : defaultArrowSpec.arrowStyle;
     var midPoints = typeof midPointSpec == "string"
-        ? aliases_1.arrowStyleAliases[midPointSpec]
+        ? styles_1.arrowStyleAliases[midPointSpec]
         : midPointSpec;
-    var headPoints = typeof headStyle == "string" ? aliases_1.headStyleAliases[headStyle] : headStyle;
+    var headPoints = typeof headStyle == "string" ? styles_1.headStyleAliases[headStyle] : headStyle;
     var curved = midPoints.curved;
     var coordAbs = {
         o: from.point,

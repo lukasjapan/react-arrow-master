@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { arrowStyleAliases, headStyleAliases } from "./aliases";
+import { arrowStyleAliases, headStyleAliases } from "./styles";
 
 interface Props {
   arrows: Arrow[];
@@ -340,6 +340,8 @@ export const ArrowArea = ({
         position: "absolute",
         width: "100%",
         height: "100%",
+        top: 0,
+        left: 0,
         pointerEvents: "none",
       }}
     />
@@ -361,3 +363,5 @@ export const ArrowArea = ({
     </div>
   </div>
 );
+
+export default ArrowArea;
