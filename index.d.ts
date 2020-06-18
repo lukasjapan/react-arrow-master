@@ -1,7 +1,7 @@
 import * as React from "react";
 interface Props {
     arrows: Arrow[];
-    defaultArrowSpec?: Partial<ArrowSpec>;
+    defaultArrowStyle?: Partial<ArrowStyle>;
     children: React.ReactNode;
 }
 export declare type Point = [number, number];
@@ -11,7 +11,7 @@ export interface DirectedPoint {
 }
 export interface Arrows {
     arrows: Arrow[];
-    defaultArrowSpec: ArrowSpec;
+    defaultArrowStyle: ArrowStyle;
 }
 export interface Value {
     value: number;
@@ -34,11 +34,11 @@ export interface HeadPointSpec {
 }
 export declare type ArrowStyleAlias = "none" | "clipClockwise" | "clipCounterclockwise" | "arcClockwise" | "arcCounterclockwise" | "corners" | "smooth";
 export declare type HeadStyleAlias = "default" | "hollow" | "filledDiamond" | "diamond" | "disk" | "circle" | "none";
-export interface ArrowSpec {
+export interface ArrowStyle {
     width: number;
     color: string;
-    arrowStyle: ArrowStyleAlias | MidPointSpec;
-    headStyle: HeadStyleAlias;
+    arrow: ArrowStyleAlias | MidPointSpec;
+    head: HeadStyleAlias;
 }
 export declare type PosXLocation = "left" | "middle" | "right";
 export declare type PosYLocation = "top" | "middle" | "bottom";
@@ -50,7 +50,7 @@ export interface ArrowLocation {
 export interface Arrow {
     from: string | ArrowLocation;
     to: string | ArrowLocation;
-    spec?: Partial<ArrowSpec>;
+    style?: Partial<ArrowStyle>;
 }
 export interface PathSpec {
     points: Point[];
@@ -59,5 +59,5 @@ export interface PathSpec {
     color: string;
     headPoints: HeadPointSpec | null;
 }
-export declare const ArrowArea: ({ arrows, children, defaultArrowSpec, }: Props) => JSX.Element;
+export declare const ArrowArea: ({ arrows, children, defaultArrowStyle, }: Props) => JSX.Element;
 export default ArrowArea;
