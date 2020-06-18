@@ -60,4 +60,4 @@ export interface PathSpec {
     headPoints: HeadPointSpec | null;
 }
 export declare const ArrowArea: ({ arrows, children, defaultArrowSpec, }: Props) => JSX.Element;
-export {};
+export default ArrowArea;
