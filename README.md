@@ -12,7 +12,7 @@ Add `react-arrow-master` to your react project:
 ```bash
 npm install react-arrow-master --save-dev
 # or
-yarn add --dev react-arrow-master --dev
+yarn add react-arrow-master --dev
 ```
 
 ## Usage / Examples
