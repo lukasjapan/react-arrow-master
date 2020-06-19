@@ -20,7 +20,7 @@ yarn add react-arrow-master --dev
 Elements can be connected with arrows if they have an id attribute and are inside an `ArrowArea`.
 The arrows are drawn by an absolute positioned SVG element that lies over the `ArrowArea`.
 
-### Simple Arrows - Starting and Ending from the Center of an Element
+### Simple Arrows - Starting from the Center of an Element
 
 Arrows are drawn from and to the center of the specified elements by default.
 
@@ -39,7 +39,7 @@ const MyComponent = () => (
 
 ![Simple](/images/simple.png)
 
-### Simple Arrows - Starting and Ending from the Side of an Element
+### Simple Arrows - Starting from the Side of an Element
 
 To start from the side of an element, pass the `id` along with the `posX` and `posY` property as an object.
 

@@ -235,8 +235,8 @@ const randomArrow = () => ({
   style: {
     width: Math.random() * 2 + 1,
     color: randFrom(colors),
-    headStyle: randFrom(headStyle),
-    arrowStyle: randFrom(arrowStyle),
+    head: randFrom(headStyle),
+    arrow: randFrom(arrowStyle),
   },
 });
 
@@ -329,7 +329,16 @@ const App = () => {
                       : "transparent",
                 }}
               >
-                {type !== "invisible" && `Box ${String.fromCharCode(65 + i)}`}
+                {type !== "invisible" && (
+                  <>
+                    <span className="d-none d-md-block">
+                      Box {String.fromCharCode(65 + i)}
+                    </span>
+                    <span className="d-md-none">
+                      {String.fromCharCode(65 + i)}
+                    </span>
+                  </>
+                )}
               </div>
             </div>
           ))}
